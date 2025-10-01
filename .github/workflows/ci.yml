@@ -20,9 +20,25 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Force Failure
+        run: node --version
+  
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:  
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
       
-      - name: Run Tests
-        run: npm run test -- --coverage
-      
-      - name: Style
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Style Check
         run: npm run format:check
