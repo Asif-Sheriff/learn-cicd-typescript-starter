@@ -1,4 +1,4 @@
-name: c1
+name: ci
 
 on:
   pull_request:
@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Test
+      - name: Run tests
         run: npm run test
   
   style:
