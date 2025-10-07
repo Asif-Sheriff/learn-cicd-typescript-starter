@@ -1,5 +1,6 @@
 import tseslint from "typescript-eslint";
 import globals from "globals";
+import pluginSecurity from "eslint-plugin-security";
 
 export default [
   {
@@ -36,4 +37,5 @@ export default [
   },
   
   ...tseslint.configs.recommended,
+  pluginSecurity.configs.recommended,
 ];
